@@ -1,0 +1,184 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Manrope', sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	background-color: hsl(210, 46%, 95%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	width: 65%;
+	display: flex;
+	border-top-left-radius: 0.7rem;
+	border-bottom-left-radius: 0.7rem;
+	border-top-right-radius: 0.7rem;
+	border-bottom-right-radius: 0.7rem;
+	box-shadow: 1px 5px 5px rgba(0, 0, 0, .3);
+}
+
+.left {
+	flex: 1;
+}
+
+.left img {
+	width: 100%;
+	height: 100%;
+	border-top-left-radius: 0.7rem;
+	border-bottom-left-radius: 0.7rem;
+}
+
+.right {
+	background-color: #fff;
+	flex: 1.2;
+	padding: 1.5rem 2rem;
+	border-top-right-radius: 0.7rem;
+	border-bottom-right-radius: 0.7rem;
+}
+
+.right .main {
+	margin: 1rem 0;
+	color: hsl(217, 19%, 35%);
+}
+
+.right .author {
+	display: flex;
+}
+
+.right .michelle {
+	width: 3rem;
+	border-radius: 50%;
+}
+
+.author-info {
+	margin-left: 1rem;
+	margin-top: 0.3rem;
+	margin-right: 12rem;
+}
+
+.name {
+	font-weight: 700;
+}
+
+.date {
+	color: hsl(217, 19%, 35%);
+}
+
+.icon-share {
+	background-color: hsl(214, 17%, 51%);
+	background: white url(images/icon-share.svg) no-repeat;
+	background-size: contain;
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-top: 0.5rem;
+	align-self: center;
+	cursor: pointer;
+}
+
+.icon-share.active {
+	position: relative;
+}
+
+.share {
+	display: none;
+}
+
+.share.active {
+	position: absolute;
+	background-color: hsl(217, 19%, 35%);
+	display: flex;
+	align-items: center;
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+	top: -5.5rem;
+	left: -8.5rem;
+	transition: .5s;
+}
+
+.share.active::after {
+	content: '';
+	position: absolute;
+	width: 2rem;
+	height: 1.7rem;
+	background-color: hsl(217, 19%, 35%);
+	bottom: -0.8rem;
+	left: 50%;
+	transform: rotate(40deg);
+}
+
+.share h3 {
+	color: white;
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: 0.3rem;
+}
+
+.share .icons {
+	display: flex;
+}
+
+.share .icons img {
+	margin: 0 0.5rem;
+}
+
+@media only screen and (min-width:360px) and (max-width:768px) {
+	.container {
+		display: block;
+		width: 85%;
+	}
+
+	.left img {
+		border-top-right-radius: 0.7rem;
+		border-bottom-left-radius: 0;
+	}
+
+	.right {
+		padding: 1.5rem;
+		border-bottom-left-radius: 0.7rem;
+	}
+
+	.right .michelle {
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+	}
+
+	.author-info {
+		margin-right: 1.5rem;
+	}
+
+	.icon-share.active {
+		position: static;
+	}
+
+	.author.active {
+		position: relative;
+	}
+
+	.right.active{
+		position: relative;
+	}
+
+	.share.active {
+		left: 0;
+		right: 0;
+		top: 83%;
+	}
+
+	.share.active::after {
+		content: '';
+		position: static;
+		width: 2rem;
+		height: 1.7rem;
+		background-color: hsl(217, 19%, 35%);
+		bottom: -0.8rem;
+		left: 50%;
+		transform: rotate(40deg);
+	}
+}
